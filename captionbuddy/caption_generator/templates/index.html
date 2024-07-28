@@ -1,0 +1,460 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>CaptionBudddy</title>
+	<link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&amp;display=swap"
+      data-tag="font"
+    />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+:root {
+	--clr: #5d38df;
+}
+
+body {
+	
+	background-image: url("{% static 'images/bg.jpeg' %}");
+	background-repeat: no-repeat;
+	background-size: cover;
+
+
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	margin:-45px 50px;
+  
+  flex-direction: column;
+  padding: 25px;
+  
+
+}
+
+
+.container {
+	padding: 28px;
+	border-radius: 20px;
+	background: #fff;
+	
+}
+.drop-area {
+	background: #eee;
+	max-width: 420px;
+	width: 100%;
+	padding: 20px;
+	border-radius: 10px;
+	text-align: center;
+	color: #7b02dd;
+	cursor: pointer;
+	border: 2px dashed #7b02dd;
+	position: relative;
+	overflow: hidden;
+}
+.icon {
+	font-size: 100px;
+	margin-bottom: 16px;
+}
+h3 {
+	font-size: 20px;
+	font-weight: 600;
+	margin-bottom: 16px;
+	pointer-events: none;
+}
+p {
+	font-size: 14px;
+}
+p span {
+	font-weight: 600;
+}
+.thumbnail, .img-name {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+.thumbnail {
+	object-fit: cover;
+	z-index: 100;
+}
+.img-name {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	font-weight: 500;
+	padding: 16px;
+	background: rgba(0, 0, 0, .5);
+	z-index: 200;
+	opacity: 0;
+	transition: all .3s ease;
+}
+.drop-area:hover .img-name {
+	opacity: 1;
+}
+	
+.label:hover {
+  color: hsl(210, 100%, 40%);
+}   .label {
+	display: block;
+  width: auto;
+  line-height: 26px;
+  font-size: 12px;
+  font-weight: 900;
+  font-family: helvetica, sans-serif;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+   border-radius: (4px);
+  background-color: rgba(239,239,239,1);
+   background-image:(linear-gradient(top, rgba(255,255,255,1) 0%,rgba(239,239,239,1) 60%,rgba(225,223,226,1) 100%));
+  box-shadow:(0 1px 3px #cfcfcf);
+  border: 1px solid #bcbcbc;
+  border-left: 0;
+  color: #888;
+  text-shadow: 0 1px 0 rgba(255,255,255, 0.8);
+	 single-transition:(color,0.1s,linear,0);
+}
+	.title {
+	color:black;
+	font-family: Sans-Serif;
+	font-weight: bold;
+        font-size:30px;
+	}
+
+.div1{
+  display: flex;
+  border-radius: 50px;
+  margin-bottom: 50px;
+  justify-content: space-between;
+  border:1px solid black;
+  width:100%;
+  align-items: center;
+  padding-top:24px;
+  padding-bottom:24px;
+  padding-left:48px;
+ padding-right:48px;
+}
+
+#logoutbtn {
+  border: 1.5px solid ;
+  border-radius: 45px;
+  padding:10px 10px;
+  
+} 
+
+.button {
+      display: inline-block;
+      padding: 5px 15px;
+      background-color: rgb(27 5 164);
+      color: white;
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+	  border-radius: 15px; padding:2px 15px;
+	  font-size: 20px;
+    }
+    .button:hover {
+      background-color: rgb(52, 176, 238);
+    }
+
+	.button1 {
+      display: inline-block;
+      padding: 5px 15px;
+      background-color: rgb(80, 79, 88);
+      color: white;
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+	  border-radius: 15px; padding:2px 15px;
+	  font-size: 50px;
+    }
+
+	.hbtn{
+		display: inline-block;
+      padding: 5px 15px;
+      background-color: rgb(247, 115, 194);
+      color: white;
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+	  border-radius: 15px; padding:1px 10px;
+      margin-bottom: 5px;
+	}
+	.lbtn{
+		
+      padding: 5px 15px;
+      background-color: rgb(99, 96, 122);
+      color: white;
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+	  border-radius: 15px; padding:1px 10px;
+
+	}
+
+	#caption_button{
+		background: #b024ff;
+    border-radius: 20px;
+    padding: 15px;
+    font-size: 17px; cursor: pointer;
+	}
+
+#caption_button:hover{
+      background-color: #24e6f4;
+}
+	/* HTML: <div class="loader"></div> */
+#feedback {
+  width: fit-content;
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 30px;
+  background: radial-gradient(circle closest-side,#000 94%,#0000) right/calc(200% - 1em) 100%;
+  animation: l24 1s infinite alternate linear;
+}
+#feedback::before {
+  content: "Loading...";
+  line-height: 1em;
+  color: #0000;
+  background: inherit;
+  background-image: radial-gradient(circle closest-side,#fff 94%,#000);
+  -webkit-background-clip:text;
+          background-clip:text;
+}
+
+@keyframes l24{
+  100%{background-position: left}
+}
+
+
+
+		#profile-overlay {
+            display: none;
+            position: fixed;
+			text-align: center;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+            z-index: 9999; /* Ensure the overlay appears above other content */
+        }
+
+        #profile-section {
+			
+            position: absolute;
+            top: 50%;
+            left: 50%;
+			width: 300px;
+            transform: translate(135%, -135%);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+	</style>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+</head>
+<body>
+	<div class="div1" style="
+	display: flex;
+	border-radius: 50px;
+	margin-bottom: 70px;
+	justify-content: space-between;
+	border:1px solid black;
+	width:100%;
+	align-items: center;
+	padding-top:24px;
+	padding-bottom:24px;
+	padding-left:48px;
+   padding-right:48px;
+   background-color: white;">
+    <header class="title" style="
+	  color:black;
+	  font-family: Lato;
+	  font-weight: bold;
+	  font-size:30px;">CAPTIONBUDDY</header>
+{% if user.is_authenticated %}
+
+<button id="show-profile-btn" class="button">    <div class="user-icon">{{ user.username|first|upper }}</div></button>
+
+		<div id="profile-overlay">
+			<div id="profile-section" class="container1">
+				
+				<div class="user-info">
+					<div class="avatar">
+<button  class="button1">    <div class="user-icon">{{ user.username|first|upper }}</div></button>
+					</div>
+					<div class="username">
+						<p>Welcome, {{ user.username }}</p>
+					</div>
+				</div><br>
+				<div class="options">
+					<a href="{% url 'save_data' %}" class="hbtn">History</a><br>
+					<a href="{% url 'logout' %}" class="lbtn">Logout</a>
+				</div>
+			</div>
+			</div>
+{% else %}
+<a href="{% url 'home' %}" class="button">Back</a>
+{% endif %}
+		</div>
+<div>{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}" style="color: rgb(249 255 26 / 98%);font-size: 20px; text-align: center;">
+           <b> {{ message }}</b>
+        </div>
+    {% endfor %}
+{% endif %}
+<form  method="post" style="text-align: center ;" id="upload-form"  enctype="multipart/form-data">
+	{% csrf_token %}
+	<header><h1 style="color: #ffd185;"></h1></header>
+	<div class="container">
+		<div class="drop-area">
+			<i class='bx bxs-cloud-upload icon'></i>
+			<h3>Drag and drop or click here to upload image</h3>
+			<p>Image size must be less than <span>5MB</span></p>
+			<input type="file" name="image12" accept=".JPG,.JPEG,.PNG" id="input-file" hidden >
+		</div>
+	</div> <br><div>
+     <button type="submit" id="caption_button" >Generate Caption</button></div><br>
+<div class="loader hidden" style="display: none;"></div>
+</form></div>
+<div id="feedback" style="display: none;"></div>
+	<script>
+		
+
+const dropArea = document.querySelector('.drop-area');
+const inputFile = document.getElementById('input-file');
+
+dropArea.addEventListener('click', function () {
+	inputFile.click()
+})
+
+inputFile.addEventListener('change', function () {
+	const file = this.files[0];
+	
+	if(file.type.startsWith('image/')) {
+		if(file.size < 5000000) {
+			create_thumbnail(file);
+		} else {
+			alert('Image size must be less than 5MB');
+		}
+	} else {
+		alert('Only image are allowed');
+	}
+})
+
+dropArea.addEventListener('dragover', function (e) {
+	e.preventDefault();
+	this.style.borderStyle = 'solid';
+
+	const h3 = this.querySelector('h3');
+	h3.textContent = 'Release here to upload image';
+})
+
+dropArea.addEventListener('drop', function (e) {
+	e.preventDefault();
+	inputFile.files = e.dataTransfer.files;
+	const file = e.dataTransfer.files[0];
+	if (file.type === 'image/jpg' || file.type === 'image/png' || file.type === 'image/jpeg') {
+        if (file.size < 5000000) {
+            create_thumbnail(file);
+        } else {
+            alert('Image size must be less than 5MB');
+        }
+    } else {
+        alert('Only JPG and PNG image formats are allowed');
+    }
+})
+
+const command = ['dragleave', 'dragend']
+
+command.forEach(item=> {
+	dropArea.addEventListener(item, function () {
+		this.style.borderStyle = 'dashed';
+
+		const h3 = this.querySelector('h3');
+		h3.textContent = 'Drag and drop or click here to select image';
+	})
+})
+
+function create_thumbnail(file) {
+	const img = document.querySelectorAll('.thumbnail');
+	const imgName = document.querySelectorAll('.img-name');
+	img.forEach(item=> item.remove());
+	imgName.forEach(item=> item.remove());
+	const reader = new FileReader();
+	reader.onload = ()=> {
+		const url = reader.result;
+		const img = document.createElement('img');
+		img.src = url;
+		img.className = 'thumbnail'
+		const span = document.createElement('span');
+		span.className = 'img-name';
+		span.textContent = file.name;
+		dropArea.appendChild(img);
+		dropArea.appendChild(span);
+		dropArea.style.borderColor = 'transparent';
+	}
+	reader.readAsDataURL(file);
+}
+
+document.querySelector('form').addEventListener('submit', function() {
+    document.getElementById('feedback').style.display = 'block';
+});
+
+	var profileOverlay = document.getElementById('profile-overlay');
+    var showProfileBtn = document.getElementById('show-profile-btn');
+
+    showProfileBtn.addEventListener('click', function() {
+        profileOverlay.style.display = 'block';
+    });
+
+    // Close the profile overlay when clicking outside of it
+    profileOverlay.addEventListener('click', function(event) {
+        if (event.target === profileOverlay) {
+            profileOverlay.style.display = 'none';
+        }
+    });
+
+// Event listener for offline state
+window.addEventListener('offline', function() {
+    // Code to handle offline state
+    alert('You are offline. Please check your internet connection.');
+});
+
+// Event listener for online state
+window.addEventListener('online', function() {
+    // Code to handle online state
+    alert('You are back online!');
+});
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+Hello {{ user.username }},
+
+Please click the following link to verify your email:
+{{ verification_url }}
+
+Thank you,
+CaptionBuddy

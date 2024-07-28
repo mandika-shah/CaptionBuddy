@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Welcome to your Dashboard</h1>
+    <h2>Your Images:</h2>
+    <ul>
+        {% for image in user_images %}
+        <li>
+            <img src="{{ image.image.url }}" alt="User Image">
+            <p>Caption: {{ image.captiontext }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="#">Logout</a>
+</body>
+</html>
