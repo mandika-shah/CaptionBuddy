@@ -1,6 +1,6 @@
-# CaptionX
+# CaptionBuddy
 
-CaptionX is a web application that generates captions for images using deep learning techniques. Built with Django, this project utilizes a pre-trained neural network model to provide descriptive captions for uploaded images.
+CaptionBuddy is a web application that generates captions for images using deep learning techniques. Built with Django, this project utilizes a pre-trained neural network model to provide descriptive captions for uploaded images.
 
 ## Table of Contents
 
