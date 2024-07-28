@@ -4,9 +4,10 @@ CaptionBuddy is a web application that generates captions for images using deep 
 
 ## Table of Contents
 
-- [Dataset](#Dataset)
+- [Dataset](#dataset)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
+- [Ecountered Problems](#encountered-problems)
 
 ## Dataset
 -The [Flickr8k dataset] is used for training and evaluating the image captioning system. It consists of 8,091 images, each with five captions describing the content of 
@@ -26,4 +27,11 @@ CaptionBuddy is a web application that generates captions for images using deep 
 - TensorFlow (for the image captioning model)
 - HTML/CSS/JavaScript (for frontend development)
 - SQLite (for the database)
-  
+
+## Encountered Problems
+
+- **Out of memory issue**:
+  - Try lowering 'batch_size' parameter to reduce memory consumption.
+- **Results may vary with each run**:
+  - The results may vary slightly with each execution of the script.
+- **Results lack a high degree of accuracy.**
